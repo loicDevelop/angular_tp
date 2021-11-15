@@ -1,6 +1,7 @@
-import { MoteurElectrique } from "./composant/moteurDiesel";
-import { MoteurEssence } from "./composant/moteurEssence";
-import { Voiture } from "./vehicle/voiture";
+import { MoteurElectrique } from "../models/composant/moteurDiesel";
+import { MoteurEssence } from "../models/composant/moteurEssence";
+import { StationEssence } from "../models/special/StationEssence";
+import { Voiture } from "../models/vehicle/voiture";
 
 function run(voitures:Voiture[]){
     console.log('Concours de burn ce soir !!');
@@ -12,6 +13,16 @@ function run(voitures:Voiture[]){
     for(let i=0; i < voitures.length ; i++ ){
        console.log(voitures[i].puissance());
     }
+    console.log("\n end of story ...")
+}
+
+function plein(voitures:Voiture[]){
+    console.log('Session plein');
+    let station = new StationEssence(3.4,1.2); 
+
+    voitures[0].fairePleinEssenc(32,station);
+    voitures[1].fairePleinElec(40,station);
+    
     console.log("\n end of story ...")
 }
 
