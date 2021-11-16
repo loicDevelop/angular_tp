@@ -1,0 +1,6 @@
+<ng-container *ngFor="let utilisateur of utilisateurs">
+    <img [src]="imgUrl" alt="profil">
+    <p>{{utilisateur.nom | uppercase }} {{utilisateur.prenom}}</p>
+    <input type="text" [(ngModel)]="utilisateur.prenom">
+    <button (click)="eventAdd(utilisateur)">Add</button>
+</ng-container>
